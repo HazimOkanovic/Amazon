@@ -82,7 +82,7 @@
         <Compile Include="Pages\SomePage.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="Tests\BaseTest.cs" />
-        <Compile Include="Tests\SomeTest.cs" />
+        <Compile Include="Tests\ImageComparisonTests.cs" />
     </ItemGroup>
     <ItemGroup>
       <None Include="App.config" />
