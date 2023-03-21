@@ -7,16 +7,19 @@ namespace Amazon.Tests
 {
     public class SomeTest : BaseTest
     {
-        private SomePage somePage;
+        private HomePage _homePage;
+        private ResultsPage _resultsPage;
 
-        public SomeTest() : base()
+        public SomeTest()
         {
-            somePage = new SomePage(driver);
+            _homePage = new HomePage(driver);
+            _resultsPage = new ResultsPage(driver);
         }
-        [Test]
+        
+        [OneTimeSetUp]
         public void Setup()
         {
-            somePage.GoToUrl(ConfigHelper.WEB_URL);
+            _homePage.GoToUrl(ConfigHelper.WEB_URL);
         }
     }
 }
