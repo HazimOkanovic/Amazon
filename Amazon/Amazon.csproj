@@ -34,6 +34,12 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
+        <Reference Include="GroupDocs.Comparison">
+          <HintPath>..\packages\GroupDocs.Comparison.23.3.0\lib\net40\GroupDocs.Comparison.dll</HintPath>
+        </Reference>
+        <Reference Include="GroupDocs.Comparison, Version=23.3.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+          <HintPath>..\packages\GroupDocs.Comparison.23.3.0\lib\net40\GroupDocs.Comparison.dll</HintPath>
+        </Reference>
         <Reference Include="mscorlib" />
         <Reference Include="nunit.framework, Version=3.13.3.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
           <HintPath>..\packages\NUnit.3.13.3\lib\net45\nunit.framework.dll</HintPath>
@@ -64,6 +70,12 @@
         <Reference Include="System.ServiceProcess" />
         <Reference Include="System.Transactions" />
         <Reference Include="System.Xml" />
+        <Reference Include="TestApiCore, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>..\packages\Microsoft.TestApi.0.6.0.0\lib\net40\TestApiCore.dll</HintPath>
+        </Reference>
+        <Reference Include="TestApiWpf, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>..\packages\Microsoft.TestApi.0.6.0.0\lib\net40\TestApiWpf.dll</HintPath>
+        </Reference>
         <Reference Include="WebDriver, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
           <HintPath>..\packages\Selenium.WebDriver.4.8.1\lib\net48\WebDriver.dll</HintPath>
         </Reference>
@@ -77,10 +89,12 @@
         <Compile Include="Helpers\ConfigHelper.cs" />
         <Compile Include="Helpers\DriverHelper.cs" />
         <Compile Include="Pages\BasePage.cs" />
+        <Compile Include="Pages\HomePage.cs" />
+        <Compile Include="Pages\ResultsPage.cs" />
         <Compile Include="Pages\SomePage.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="Tests\BaseTest.cs" />
-        <Compile Include="Tests\SomeTest.cs" />
+        <Compile Include="Tests\ImageComparisonTests.cs" />
     </ItemGroup>
     <ItemGroup>
       <None Include="App.config" />
