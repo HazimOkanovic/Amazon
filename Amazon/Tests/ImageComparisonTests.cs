@@ -1,3 +1,5 @@
+using System;
+using System.Drawing;
 using Amazon.Helpers;
 using Amazon.Pages;
 using NUnit.Framework;
@@ -14,7 +16,7 @@ namespace Amazon.Tests
             _homePage = new HomePage(driver);
             _resultsPage = new ResultsPage(driver);
         }
-        
+
         [OneTimeSetUp]
         public void Setup()
         {
@@ -27,8 +29,21 @@ namespace Amazon.Tests
             _homePage
                 .EnterTextInSearch("Bicycle")
                 .ClickSearchButton();
-            
+
             Assert.That(_resultsPage.GetSearchResultText(), Is.EqualTo("\"Bicycle\""));
+        }
+
+        [Test, Order(2)]
+        public void SelectTheBike()
+        {
+            _resultsPage
+                .ClickFirstBike();
+
+            Assert.That(_resultsPage.GetProductTitle(),
+                Is.EqualTo("Huffy Hardtail Mountain Bike, Stone Mountain 26 inch, 21-Speed, Lightweight, Dark Blue"));
+            _resultsPage.GetImage();
+            _resultsPage.SecondImage();
+                
         }
     }
 }
