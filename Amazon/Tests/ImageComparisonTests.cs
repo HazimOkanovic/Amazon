@@ -1,5 +1,3 @@
-using System;
-using System.Drawing;
 using Amazon.Helpers;
 using Amazon.Pages;
 using NUnit.Framework;
@@ -27,10 +25,10 @@ namespace Amazon.Tests
         public void SearchForProduct()
         {
             _homePage
-                .EnterTextInSearch("Bicycle")
+                .EnterTextInSearch(Constants.SearchText)
                 .ClickSearchButton();
 
-            Assert.That(_resultsPage.GetSearchResultText(), Is.EqualTo("\"Bicycle\""));
+            Assert.That(_resultsPage.GetSearchResultText(), Is.EqualTo(Constants.SearchResultText));
         }
 
         [Test, Order(2)]
@@ -40,10 +38,16 @@ namespace Amazon.Tests
                 .ClickFirstBike();
 
             Assert.That(_resultsPage.GetProductTitle(),
-                Is.EqualTo("Huffy Hardtail Mountain Bike, Stone Mountain 26 inch, 21-Speed, Lightweight, Dark Blue"));
-            _resultsPage.GetImage();
-            _resultsPage.SecondImage();
-                
+                Is.EqualTo(Constants.ProductTitle));
+        }
+
+        [Test, Order(3)]
+        public void CompareImagesTest()
+        {
+            _resultsPage
+                .GetImage()
+                .ClickOnImage()
+                .CompareImages();
         }
     }
 }
