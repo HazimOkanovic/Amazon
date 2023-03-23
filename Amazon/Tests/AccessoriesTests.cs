@@ -31,5 +31,16 @@ namespace Amazon.Tests
             
             Assert.That(_accessoriesPage.GetPageTitle(), Is.EqualTo("Accessories & Supplies"));
         }
+
+        [Test, Order(2)]
+        public void EnterLowPriceTest()
+        {
+            _accessoriesPage
+                .ScrollToLowPrice()
+                .EnterLowPrice("10000")
+                .ClickGoButton();
+            
+            Assert.That(_accessoriesPage.GetResults(), Is.EqualTo("9 results"));
+        }
     }
 }
