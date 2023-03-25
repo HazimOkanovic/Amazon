@@ -64,20 +64,8 @@ namespace Amazon.Pages
             {
                 allProducts.Add(t.Text);
             }
-            /*foreach(var i in allProducts)
-            {
-                Console.WriteLine(i);
-            }*/
             string items = string.Join(Environment.NewLine, allProducts);
-            Console.WriteLine(items);
             return items;
-        }
-
-        public AccessoriesPage SortBy(string sortBy)
-        {
-            string selectOption = String.Format("//li//a[contains(text(), '{0}')]", sortBy);
-            SelectFromDropdown(_sortDropDown, By.XPath(selectOption));
-            return this;
         }
 
         public AccessoriesPage SortByHighToLow()
