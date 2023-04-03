@@ -8,10 +8,10 @@ After that, I have done several tests regarding sorting the products and asserti
 
 When it comes to the necessary packages, I have used:
 
-Selenium
+Selenium, 
 
-NUnit
+NUnit, 
 
-Selenium Extras
+Selenium Extras, 
 
 Chrome Driver
